@@ -80,4 +80,76 @@ public class Main {
         colors.set(2, "Black");
         colors.set(3, "Black");
         System.out.println(colors);
-    }}
+
+        //task6
+        ArrayList<String> sports = new ArrayList<>();
+        sports.add("Swimming");
+        sports.add("Baseball");
+        sports.add("Basketball");
+        sports.add("Football");
+        sports.add("Tennis");
+        sports.add("Cricket");
+        ArrayList<String> sports2 = new ArrayList<>();
+        sports2.add("Football");
+        sports2.add("Tennis");
+        if(sports.containsAll(sports2)){
+            System.out.println("Sublist is present");
+        }
+        else{
+            System.out.println("Sublist isn't present");
+        }
+
+        //task7
+        ArrayList<String> flowers = new ArrayList<>();
+        flowers.add("Rose");
+        flowers.add("Tulips");
+        flowers.add("Lily of the valley");
+        flowers.add("Rose");
+        flowers.add("Wildflower");
+        int firstApp = flowers.indexOf("Rose");
+        System.out.println("first index of Rose: " + firstApp);
+        int lastApp = flowers.lastIndexOf("Rose");
+        System.out.println("last index of Rose: " + lastApp);
+
+        //task8
+        ArrayList<String> animals = new ArrayList<>();
+        animals.add("Lion");
+        animals.add("Penguin");
+        animals.add("Snake");
+        animals.add("Penguin");
+        animals.add("Polar bear");
+        animals.add("Penguin");
+        animals.add("Snake");
+        animals.add("Racoon");
+        animals.add("Cat");
+        ArrayList<String> unique = new ArrayList<>();
+        for(int i = 0; i < animals.size(); i++) {
+            if (!unique.contains(animals.get(i))){
+                unique.add(animals.get(i));
+            }
+            else{}
+        }
+        System.out.println("Unique list of animals: " + unique);
+
+        //task9
+        ArrayList<String> cities = new ArrayList<>();
+        cities.add("Melbourne");
+        cities.add("Warsaw");
+        cities.add("Miami");
+        cities.add("Tokyo");
+        String [] cityArray = cities.toArray(new String [0]);
+        for(int i = 0; i < cityArray.length; i++){
+            System.out.println(cityArray[i]);
+        }
+        //task10
+        int [] numbers = {1,2,3,4,5};
+        ArrayList<Integer> numbrs = new ArrayList<>();
+        for(int i = 0; i < numbers.length; i++){
+            numbrs.add(numbers[i]);
+        }
+        System.out.println(numbrs);
+
+
+    }
+
+}
