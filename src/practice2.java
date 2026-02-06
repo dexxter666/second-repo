@@ -1,3 +1,4 @@
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.HashSet;
 public class practice2 {
@@ -136,7 +137,142 @@ public class practice2 {
         lowerCaseWords.addAll(wordsList);
         System.out.println(lowerCaseWords);
 
+        //task11
+        ArrayDeque<Integer> queue = new ArrayDeque<>();
+        queue.offer(10);
+        queue.offer(15);
+        queue.offer(27);
+        System.out.println("Peek: " + queue.peek());
+        while(!queue.isEmpty()){
+            System.out.println("Poll: " + queue.poll());
+        }
 
+        //task12
+        ArrayDeque<String> stack = new ArrayDeque<>();
+        stack.push("pineapple");
+        stack.push("strawberry");
+        stack.push("lemon");
+        while(!stack.isEmpty()){
+            System.out.println("Pop: " + stack.pop());
+        }
+
+        //task13
+        ArrayDeque<Integer> deque = new ArrayDeque<>();
+        deque.addFirst(2);
+        deque.addFirst(1);
+        deque.addLast(8);
+        deque.addLast(9);
+
+        System.out.println(deque);
+
+        //task14
+        ArrayDeque<Integer> deque1 = new ArrayDeque<>();
+        boolean b = deque1.offerFirst(10);
+        boolean c =deque1.offerLast(20);
+        boolean d = deque1.offerFirst(5);
+
+        System.out.println(b);
+        System.out.println(c);
+        System.out.println(d);
+
+        System.out.println(deque1);
+
+        //task15
+        ArrayDeque<Integer> deque3 = new ArrayDeque<>();
+        deque3.addLast(17);
+        deque3.addLast(66);
+        deque3.addLast(29);
+
+        System.out.println("peek(): " + deque3.peek());
+        System.out.println("peekFirst(): " + deque3.peekFirst());
+        System.out.println("peekLast(): " + deque3.peekLast());
+        deque3.clear();
+        System.out.println("After clear:");
+        System.out.println("peek(): " + deque3.peek());
+        System.out.println("peekFirst(): " + deque3.peekFirst());
+        System.out.println("peekLast(): " + deque3.peekLast());
+
+        //task16
+        ArrayDeque<Integer> deque4 = new ArrayDeque<>();
+
+        deque4.addLast(10);
+        deque4.addLast(20);
+        deque4.addLast(30);
+        deque4.addLast(40);
+
+        System.out.println("Start: " + deque4);
+
+        System.out.println("poll(): " + deque4.poll());
+        System.out.println("pollFirst(): " + deque4.pollFirst());
+        System.out.println("pollLast(): " + deque4.pollLast());
+
+        System.out.println("Remaining:");
+        while (!deque4.isEmpty()) {
+            System.out.println(deque4.poll());
+        }
+        System.out.println("After empty:");
+        System.out.println(deque4.poll());
+
+        //task17
+        ArrayDeque<String> deque5 = new ArrayDeque<>();
+
+        deque5.addLast("a");
+        deque5.addLast("b");
+        deque5.addLast("c");
+        deque5.addLast("b");
+        deque5.addLast("a");
+
+        System.out.println("Original deque: " + deque5);
+
+        deque5.removeFirstOccurrence("b");
+        System.out.println("After removeFirstOccurrence(b): " + deque5);
+        deque5.removeLastOccurrence("a");
+        System.out.println("After removeLastOccurrence(a): " + deque5);
+
+        //task18
+        ArrayDeque<Integer> deque6 = new ArrayDeque<>();
+        System.out.println("Initial: size=" + deque6.size() + ", isEmpty=" + deque6.isEmpty());
+        deque6.add(10);
+        System.out.println("After add 10: size=" + deque6.size() + ", isEmpty=" + deque6.isEmpty());
+        deque6.add(20);
+        System.out.println("After add 20: size=" + deque6.size() + ", isEmpty=" + deque6.isEmpty());
+        deque6.add(30);
+        System.out.println("After add 30: size=" + deque6.size() + ", isEmpty=" + deque6.isEmpty());
+        deque6.remove();
+        System.out.println("After remove(): size=" + deque6.size() + ", isEmpty=" + deque6.isEmpty());
+        deque6.remove();
+        System.out.println("After remove(): size=" + deque6.size() + ", isEmpty=" + deque6.isEmpty());
+        deque6.remove();
+        System.out.println("After remove(): size=" + deque6.size() + ", isEmpty=" + deque6.isEmpty());
+
+        //task19
+        ArrayDeque<Integer> deque7 = new ArrayDeque<>();
+        deque7.add(7);
+        deque7.add(14);
+        deque7.add(21);
+        System.out.println("Before clear: " + deque7);
+        deque7.clear();
+        System.out.println("After clear, peek(): " + deque7.peek());
+        System.out.println("After clear, isEmpty(): " + deque7.isEmpty());
+
+        //task20
+        String word = "racecar";
+        ArrayDeque<Character> deque8 = new ArrayDeque<>();
+        for (char ch : word.toCharArray()) {
+            deque8.addLast(ch);
+        }
+        boolean isPalindrome = true;
+        while (deque8.size() > 1) {
+            if (!deque8.pollFirst().equals(deque8.pollLast())) {
+                isPalindrome = false;
+                break;
+            }
+        }
+        if (isPalindrome) {
+            System.out.println(word + " is a palindrome");
+        } else {
+            System.out.println(word + " is NOT a palindrome");
+        }
     }
 }
 
